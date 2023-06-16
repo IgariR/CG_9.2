@@ -60,35 +60,36 @@
       sprite0.position.y = 100;
       sprite0.position.z = 0;
       sprite0.scale.set(50,50,50);
-      scene.add(sprite0);  
+      scene.add(sprite0); 
         
-      //円柱
-      const geometry = new THREE.CylinderGeometry(0.8,0.5,0.5,32);
-      const material = new THREE.MeshPhongMaterial({ color: 0x0000ff });
-      const cylinder = new THREE.Mesh(geometry, material);
-      cylinder.position.set(0,0,0); //位置を指定
-      scene.add(cylinder);   // シーンに追加
+      tick();
         
-      update();
-        
-     tick();
-        // 毎フレーム時に実行されるループイベントです
+       // 毎フレーム時に実行されるループイベントです
         function tick() {
           // レンダリング
           renderer.render(scene, camera);
           requestAnimationFrame(tick);
         }
       }
+        
+      //円柱
+      const geometry = new THREE.CylinderGeometry(0.8,0.5,0.5,32);
+      const material = new THREE.MeshPhongMaterial({ color: 0x0000ff });
+      const cylinder = new THREE.Mesh(geometry, material);
+      cylinder.position.set(0,0,0); //位置を指定
+      scene2.add(cylinder);   // シーンに追加
+        
+      update();
       
       // 毎フレーム時に実行されるループイベントです
         function update() {
           // レンダリング
-          renderer.render(scene, camera);
+          renderer.render(scene2, camera);
           requestAnimationFrame(update);
 
            // 箱を回転させる
-          box.rotation.x += 0.01;
-          box.rotation.y += 0.01;
+          cylinder.rotation.x += 0.01;
+          cylinder.rotation.y += 0.01;
 
         }
     </script>
