@@ -63,9 +63,9 @@
       scene.add(sprite0);  
         
       //円柱
-      var geometry = new THREE.CylinderGeometry(0.8,0.5,0.5,32);
-      var material = new THREE.MeshPhongMaterial({ color: 0x0000ff });
-      var cylinder = new THREE.Mesh(geometry, material);
+      const geometry = new THREE.CylinderGeometry(0.8,0.5,0.5,32);
+      const material = new THREE.MeshPhongMaterial({ color: 0x0000ff });
+      const cylinder = new THREE.Mesh(geometry, material);
       cylinder.position.set(0,0,0); //位置を指定
       scene.add(cylinder);   // シーンに追加
         
