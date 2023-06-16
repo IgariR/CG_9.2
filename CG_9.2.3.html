@@ -53,14 +53,21 @@
       //うさ
       var textureLoader = new THREE.TextureLoader();  
       var texture0 = textureLoader.load("img6.3.png");
-      const material0 = new THREE.SpriteMaterial({ map: texture0,});
+      const material0 = new THREE.SpriteMaterial({ map: texture0,})
 
       const sprite0 = new THREE.Sprite(material0);
       sprite0.position.x = 0;
-      sprite0.position.y = 50;
+      sprite0.position.y = 100;
       sprite0.position.z = 0;
-      sprite0.scale.set(100,100,100);
+      sprite0.scale.set(50,50,50);
       scene.add(sprite0);  
+        
+      //円柱
+      var geometry = new THREE.CylinderGeometry(0.8,0.5,0.5,32);
+      var material = new THREE.MeshPhongMaterial({ color: 0x0000ff });
+      var cylinder = new THREE.Mesh(geometry, material);
+      box.position.set(0,0,0); //位置を指定
+      scene.add(cylinder);   // シーンに追加
         
      tick();
         // 毎フレーム時に実行されるループイベントです
